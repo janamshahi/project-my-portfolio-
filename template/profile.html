@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #a3bbdf;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        .profile {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #236cba;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #84add9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile">
+    <h3>User Profile</h3>
+
+    {% if user.is_authenticated %}
+        <p><b>Username:</b> {{ user.username }}</p>
+        <p><b>Email:</b> {{ user.email }}</p>
+        <p><b>Password:</b> ********</p>
+
+        <a href="#" class="btn">Edit Profile</a>
+        <a href="{% url 'home' %}" class="btn">Back to Dashboard</a>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}" class="btn">Login</a>
+    {% endif %}
+</div>
+
+</body>
+</html>
