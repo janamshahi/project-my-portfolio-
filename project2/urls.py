@@ -19,10 +19,6 @@ from django.urls import path
 from project2 import views 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.home, name='home'),
-    # path('about/', views.about),
-    # path('contact/', views.contact),
-    # path('', views.home,),
     path('register/', views.register, name='register'),
     path('', views.login, name='login'),
     path('home/', views.home, name='home'),

@@ -39,14 +39,6 @@ def user_login(request):
 
     return render(request, 'login.html')
 
-# def home(request):
-#     return HttpResponse("This is my page. <h2> janam shahi</h2>")
-
-# def contact(request):
-#     return HttpResponse("This is the contact page. <h2> 9748864646</h2>")
-
-# def register(request):
-#     return render(request, 'register.html')
 
 def register(request):
     if request.method == 'POST':
