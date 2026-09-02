@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,13 +112,6 @@
         <h2>Register</h2>
         <p class="subtitle"> fill in this form to register.</p>
 
-        {% comment %} {% if messages %}
-            <ul style="color:red; padding-left:0; list-style:none; margin-bottom:15px;">
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %} {% endcomment %}
 
         <form method="POST">
             {% csrf_token %}
@@ -133,6 +125,5 @@
 
         <p class="login-link">Already have an account? <a href="{% url 'login' %}">Log in.</a></p>
     </div>
-    
 </body>
 </html>
