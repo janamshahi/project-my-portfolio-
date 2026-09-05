@@ -1,0 +1,1991 @@
+/* =========================================================
+   HOME.CSS
+   Janam Shahi Portfolio
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+    --bg: #07111f;
+    --surface: #0e1b2d;
+    --surface2: #13243a;
+
+    --text: #f5f7fb;
+    --muted: #9aa9bd;
+
+    --primary: #38bdf8;
+    --primary2: #818cf8;
+
+    --danger: #ef4444;
+    --success: #22c55e;
+
+    --border: rgba(148, 163, 184, 0.18);
+
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, 0.28);
+
+    --max-width: 1150px;
+
+    --navbar-height: 74px;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+[data-theme="light"] {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --surface2: #eef3f9;
+
+    --text: #101828;
+    --muted: #667085;
+
+    --primary: #0284c7;
+    --primary2: #4f46e5;
+
+    --border: #dce3ec;
+
+    --shadow:
+        0 18px 45px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 85px;
+}
+
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    line-height: 1.7;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+    overflow-x: hidden;
+}
+
+
+body,
+button,
+input,
+textarea {
+    font-family: "Inter", Arial, sans-serif;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+.container {
+    width: min(
+        var(--max-width),
+        calc(100% - 40px)
+    );
+
+    margin: 0 auto;
+}
+
+
+section {
+    padding: 100px 0;
+
+    scroll-margin-top: var(--navbar-height);
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: var(--navbar-height);
+
+    z-index: 9999;
+
+    background:
+        rgba(7, 17, 31, 0.88);
+
+    backdrop-filter: blur(16px);
+
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+[data-theme="light"] header {
+    background:
+        rgba(255, 255, 255, 0.92);
+}
+
+
+nav {
+    height: var(--navbar-height);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+.logo img {
+    height: 50px;
+
+    width: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    list-style: none;
+}
+
+
+.nav-links a {
+    color: var(--muted);
+
+    font-size: 0.84rem;
+
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   PROFILE BUTTON
+========================================================= */
+
+.profile-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 8px 12px;
+
+    border-radius: 9px;
+
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    color: var(--text) !important;
+
+    font-weight: 700 !important;
+
+    transition: 0.25s ease;
+}
+
+
+.profile-btn:hover {
+    border-color: var(--primary);
+
+    color: var(--primary) !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 8px 13px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    color: #fff !important;
+
+    font-weight: 700 !important;
+
+    transition: 0.25s ease;
+}
+
+
+.login-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.logout-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 8px 13px;
+
+    border-radius: 9px;
+
+    color: var(--danger) !important;
+
+    background:
+        rgba(239, 68, 68, 0.10);
+
+    border:
+        1px solid rgba(239, 68, 68, 0.35);
+
+    font-weight: 700 !important;
+
+    transition: 0.25s ease;
+}
+
+
+.logout-btn:hover {
+    background: var(--danger);
+
+    color: #fff !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+    border:
+        1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    border-radius: 9px;
+
+    padding: 8px 12px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.theme-toggle:hover {
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-btn {
+    display: none;
+
+    border:
+        1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    border-radius: 9px;
+
+    padding: 8px 11px;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   HERO
+
+   IMPORTANT:
+   This fixes the gap between navbar and hero.
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+    text-align: center;
+
+    /*
+       Navbar is fixed.
+       Hero gets its own top padding.
+       No margin-top is added.
+    */
+
+    padding:
+        calc(var(--navbar-height) + 45px)
+        0
+        60px;
+
+    overflow: hidden;
+
+    background-position: center;
+
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    isolation: isolate;
+}
+
+
+/* Hero glow */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    opacity: 0.12;
+
+    filter: blur(60px);
+
+    top: -180px;
+
+    left: -150px;
+
+    z-index: -1;
+}
+
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: var(--primary2);
+
+    opacity: 0.12;
+
+    filter: blur(60px);
+
+    right: -150px;
+
+    bottom: -150px;
+
+    z-index: -1;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 850px;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.profile-wrap {
+    width: 145px;
+
+    height: 145px;
+
+    padding: 4px;
+
+    margin:
+        0 auto 24px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    box-shadow: var(--shadow);
+}
+
+
+.profile-wrap img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background: var(--surface2);
+
+    display: block;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border-radius: 999px;
+
+    color: var(--primary);
+
+    background:
+        rgba(56, 189, 248, 0.08);
+
+    border:
+        1px solid rgba(56, 189, 248, 0.25);
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   HERO TYPOGRAPHY
+========================================================= */
+
+.hero h1 {
+    font:
+        800 clamp(2.8rem, 7vw, 5.5rem) / 1.05
+        "Poppins",
+        sans-serif;
+
+    letter-spacing: -2px;
+}
+
+
+.gradient {
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.hero-subtitle {
+    font-size:
+        clamp(1.05rem, 2.5vw, 1.4rem);
+
+    color: var(--muted);
+
+    margin: 20px 0;
+}
+
+
+.typed {
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+.hero-description {
+    max-width: 720px;
+
+    margin:
+        0 auto 28px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid var(--border);
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.btn-primary {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    color: #fff;
+
+    border: none;
+}
+
+
+.btn-secondary {
+    background: var(--surface);
+
+    color: var(--text);
+}
+
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-head {
+    text-align: center;
+
+    max-width: 720px;
+
+    margin:
+        0 auto 45px;
+}
+
+
+.section-head h2 {
+    font:
+        800 clamp(2rem, 4vw, 2.8rem)
+        "Poppins",
+        sans-serif;
+}
+
+
+.section-head p {
+    color: var(--muted);
+
+    margin-top: 7px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.card h3 {
+    font:
+        700 1.15rem
+        "Poppins",
+        sans-serif;
+}
+
+
+.card p {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr 0.85fr;
+
+    gap: 24px;
+}
+
+
+.about-text p {
+    margin-top: 12px;
+}
+
+
+.info-list {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+
+.info-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    background: var(--surface2);
+}
+
+
+.info-item-icon {
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(56, 189, 248, 0.10);
+
+    font-size: 1.15rem;
+}
+
+
+.info-item small {
+    display: block;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-groups {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.skill-group {
+    padding: 20px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: var(--surface2);
+}
+
+
+.skill-group h3 {
+    margin-bottom: 12px;
+}
+
+
+.skills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+.skill {
+    padding: 8px 13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 999px;
+
+    background: var(--surface);
+
+    color: var(--muted);
+
+    font-size: 0.88rem;
+
+    transition: 0.25s ease;
+}
+
+
+.skill:hover {
+    color: var(--primary);
+
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+
+.education-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+}
+
+
+.education-table th,
+.education-table td {
+    padding: 14px;
+
+    text-align: left;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.education-table th {
+    background: var(--surface2);
+
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+.education-table td {
+    color: var(--muted);
+}
+
+
+.education-table tbody tr:hover {
+    background: var(--surface2);
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.project-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 340px;
+
+    transition: 0.3s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-7px);
+}
+
+
+.project-icon {
+    width: 55px;
+
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 14px;
+
+    background: var(--surface2);
+
+    font-size: 1.7rem;
+
+    margin-bottom: 18px;
+}
+
+
+.project-card h3 {
+    margin-bottom: 9px;
+}
+
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 16px;
+}
+
+
+.tag {
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    background:
+        rgba(56, 189, 248, 0.08);
+
+    color: var(--primary);
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+}
+
+
+.project-actions {
+    margin-top: auto;
+
+    padding-top: 20px;
+}
+
+
+.project-actions a {
+    color: var(--primary);
+
+    font-weight: 700;
+
+    font-size: 0.86rem;
+}
+
+
+/* =========================================================
+   MEDIA & GALLERY
+========================================================= */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.gallery-item {
+    position: relative;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border:
+        1px solid var(--border);
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow);
+}
+
+
+.gallery-item img,
+.gallery-item video,
+.gallery-item iframe {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.gallery-item iframe {
+    border: 0;
+}
+
+
+.video-container {
+    width: 100%;
+
+    height: 100%;
+}
+
+
+.gallery-item img,
+.gallery-item video {
+    transition:
+        transform 0.5s ease;
+}
+
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.06);
+}
+
+
+.gallery-overlay {
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    padding:
+        60px 18px 18px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.92)
+        );
+
+    color: #fff;
+
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition: 0.35s ease;
+}
+
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+.gallery-overlay h3 {
+    font:
+        700 1.05rem
+        "Poppins",
+        sans-serif;
+}
+
+
+.gallery-overlay p {
+    color: #d1d5db;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   GITHUB
+========================================================= */
+
+.github-card {
+    display: grid;
+
+    grid-template-columns:
+        120px 1fr;
+
+    gap: 30px;
+
+    align-items: center;
+}
+
+
+.github-icon {
+    width: 110px;
+
+    height: 110px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--surface2);
+
+    border:
+        1px solid var(--border);
+
+    font-size: 3.5rem;
+}
+
+
+.github-username {
+    color: var(--primary) !important;
+
+    font-weight: 700;
+}
+
+
+.github-description {
+    max-width: 750px;
+
+    margin-top: 10px;
+}
+
+
+.github-stats {
+    display: flex;
+
+    gap: 40px;
+
+    margin-top: 20px;
+}
+
+
+.github-stat {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.github-stat strong {
+    color: var(--primary);
+
+    font-size: 1.1rem;
+}
+
+
+.github-stat span {
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+
+.github-actions {
+    justify-content: flex-start;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievements-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.achievement-card {
+    transition: 0.3s ease;
+}
+
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.achievement-icon {
+    font-size: 1.8rem;
+
+    margin-bottom: 10px;
+}
+
+
+.achievement-card h3 {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 22px;
+}
+
+
+.contact-links {
+    display: grid;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.contact-link {
+    display: block;
+
+    padding: 13px;
+
+    background: var(--surface2);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    transition: 0.25s ease;
+}
+
+
+.contact-link:hover {
+    border-color: var(--primary);
+
+    transform:
+        translateX(4px);
+}
+
+
+.contact-link strong {
+    display: block;
+}
+
+
+.contact-link span {
+    color: var(--muted);
+
+    font-size: 0.84rem;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface2);
+
+    color: var(--text);
+
+    outline: none;
+
+    resize: vertical;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(56, 189, 248, 0.08);
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    width: 55px;
+
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    color: #fff;
+
+    font-size: 1.45rem;
+
+    z-index: 900;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.25);
+
+    transition: 0.25s ease;
+}
+
+
+.whatsapp:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    background: var(--surface);
+
+    color: var(--text);
+
+    padding:
+        60px 0
+        20px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 40px;
+
+    margin-bottom: 40px;
+}
+
+
+.footer-col h4 {
+    color: var(--text);
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+    position: relative;
+
+    padding-bottom: 8px;
+}
+
+
+.footer-col h4::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 30px;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    border-radius: 2px;
+}
+
+
+.footer-logo {
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: var(--primary);
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+}
+
+
+.footer-bio {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: var(--muted);
+
+    margin-bottom: 15px;
+}
+
+
+.footer-location {
+    font-size: 14px;
+
+    color: var(--muted);
+}
+
+
+.footer-links {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+
+.footer-links a {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+
+.footer-links a:hover {
+    color: var(--primary);
+
+    padding-left: 5px;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.site-footer .socials {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+
+.site-footer .socials a {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: var(--surface2);
+
+    color: var(--text);
+
+    border:
+        1px solid var(--border);
+
+    font-size: 16px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.site-footer .socials a:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    transform:
+        translateY(-3px);
+
+    color: #fff;
+
+    border-color: transparent;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    text-align: center;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid var(--border);
+
+    font-size: 13px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.reveal.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+:focus-visible {
+    outline:
+        3px solid
+        rgba(56, 189, 248, 0.45);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-links {
+        gap: 10px;
+    }
+
+
+    .nav-links a {
+        font-size: 0.76rem;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .projects-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .achievements-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    .nav-links {
+        position: absolute;
+
+        top:
+            calc(
+                var(--navbar-height) + 10px
+            );
+
+        left: 14px;
+
+        right: 14px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 18px;
+
+        background: var(--surface);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 15px;
+
+        box-shadow: var(--shadow);
+
+        max-height:
+            calc(100vh - 100px);
+
+        overflow-y: auto;
+    }
+
+
+    .nav-links.open {
+        display: flex;
+    }
+
+
+    .nav-links li {
+        width: 100%;
+    }
+
+
+    .nav-links a,
+    .theme-toggle {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        padding: 10px;
+    }
+
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .github-card {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .github-icon {
+        margin: auto;
+    }
+
+
+    .github-description {
+        margin:
+            10px auto 0;
+    }
+
+
+    .github-stats {
+        justify-content: center;
+    }
+
+
+    .github-actions {
+        justify-content: center;
+    }
+
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 650px
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width:
+            calc(100% - 28px);
+    }
+
+
+    section {
+        padding: 75px 0;
+    }
+
+
+    /*
+       Keep the navbar gap fixed on mobile too.
+    */
+
+    .hero {
+        padding:
+            calc(var(--navbar-height) + 35px)
+            0
+            45px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+
+    .profile-wrap {
+        width: 115px;
+
+        height: 115px;
+    }
+
+
+    .skill-groups,
+    .projects-grid,
+    .achievements-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-item {
+        height: 300px;
+    }
+
+
+    /*
+       Keep gallery descriptions visible on touch devices.
+    */
+
+    .gallery-overlay {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+
+    .github-stats {
+        gap: 20px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .education-table {
+        font-size: 0.78rem;
+    }
+
+
+    .education-table th,
+    .education-table td {
+        padding:
+            9px 7px;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    .github-actions {
+        flex-direction: column;
+    }
+
+
+    .github-actions .btn {
+        width: 100%;
+    }
+
+
+    .whatsapp {
+        right: 16px;
+
+        bottom: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}

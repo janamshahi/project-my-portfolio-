@@ -1,0 +1,2199 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Janam Shahi - BIM Student, Web Developer and Aspiring QA Engineer">
+    <meta name="author" content="Janam Shahi">
+
+    <title>Janam Shahi | Portfolio</title>
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" >
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+   
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================== -->
+
+<header>
+    <div class="container">
+
+        <nav>
+            <!-- LOGO -->
+            <a href="#home" class="logo" aria-label="Janam Shahi Home">
+                <img
+                    src="{% static 'image/logo.png' %}"
+                    alt="Janam Shahi Logo"
+                >
+            </a>
+
+
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+
+            <!-- NAVIGATION -->
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#media">Media</a>
+                </li>
+
+                <li>
+                    <a href="#github">GitHub</a>
+                </li>
+
+                <li>
+                    <a href="#achievements">Achievements</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+
+                <!-- THEME -->
+                <li>
+                    <button
+                        class="theme-toggle"
+                        id="themeToggle"
+                        type="button"
+                        aria-label="Toggle color theme"
+                    >
+                        ☀️ Light
+                    </button>
+                </li>
+
+
+                <!-- LOGIN / PROFILE / LOGOUT -->
+                {% if user.is_authenticated %}
+
+                    <li>
+                        <a
+                            href="{% url 'profile' %}"
+                            class="profile-btn"
+                        >
+                            👤 {{ user.username }}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="{% url 'logout' %}"
+                            class="logout-btn"
+                        >
+                            🚪 Logout
+                        </a>
+                    </li>
+
+                {% else %}
+
+                    <li>
+                        <a
+                            href="{% url 'login' %}"
+                            class="login-btn"
+                        >
+                            🔑 Login
+                        </a>
+                    </li>
+
+                {% endif %}
+
+            </ul>
+
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+<!-- =========================================================
+     HOME / HERO
+========================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content reveal">
+
+        <div class="profile-wrap">
+            <img
+                src="{% static 'image/myimage.jpg' %}"
+                alt="Janam Shahi" >
+        </div>
+
+
+        <div class="eyebrow">
+            🎓 BIM Student
+            <span>•</span>
+            💻 Web Development
+            <span>•</span>
+            🧪 QA Engineering
+        </div>
+
+
+        <h1>
+            Hi, I'm
+            <span class="gradient">
+                Janam Shahi
+            </span>
+        </h1>
+
+
+        <p class="hero-subtitle">
+            I build
+            <span
+                class="typed"
+                id="typedText"
+            ></span>
+        </p>
+
+
+        <p class="hero-description">
+            I am a Bachelor of Information Management student from
+            Dhangadhi, Kailali, Nepal. I enjoy building practical
+            software projects, web applications, database systems,
+            and Python and Django solutions while continuously
+            improving my software development and QA engineering skills.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#projects"
+                class="btn btn-primary"
+            >
+                🚀 View Projects
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn btn-secondary"
+            >
+                📩 Contact Me
+            </a>
+
+
+            <a
+                href="https://github.com/janamshahi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+            >
+                🐙 GitHub
+            </a>
+
+
+            <a
+                href="{% static 'files/janam_shahi_cv.pdf' %}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+            >
+                📄 Download CV
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <h2>
+                About Me
+            </h2>
+
+            <p>
+                Get to know me, my education and my interests.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <!-- WHO I AM -->
+            <div class="card reveal about-text">
+
+                <h3>
+                    Who I Am
+                </h3>
+
+
+                <p>
+                    I am currently studying a
+                    Bachelor of Information Management (BIM)
+                    under Tribhuvan University.
+                </p>
+
+
+                <p>
+                    I am interested in software development,
+                    web technologies, database management,
+                    QA engineering, data analysis and visualization,
+                    Python, Django and practical project development.
+                </p>
+
+
+                <p>
+                    My goal is to continuously improve my programming,
+                    testing and problem-solving skills and build useful
+                    digital solutions that solve real-world problems.
+                </p>
+
+            </div>
+
+
+            <!-- PERSONAL INFORMATION -->
+            <div class="card reveal">
+
+                <h3>
+                    Personal Information
+                </h3>
+
+
+                <div class="info-list">
+
+                    <div class="info-item">
+
+                        <span class="info-item-icon">
+                            📍
+                        </span>
+
+                        <div>
+                            <strong>
+                                Location
+                            </strong>
+
+                            <small>
+                                Dhangadhi, Kailali, Nepal
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-item-icon">
+                            🎓
+                        </span>
+
+                        <div>
+                            <strong>
+                                Degree
+                            </strong>
+
+                            <small>
+                                Bachelor of Information Management
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-item-icon">
+                            💻
+                        </span>
+
+                        <div>
+                            <strong>
+                                Career Interest
+                            </strong>
+
+                            <small>
+                                Software & Web Development & QA Engineering
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-item-icon">
+                            📧
+                        </span>
+
+                        <div>
+                            <strong>
+                                Email
+                            </strong>
+
+                            <small>
+                                shahijanam633@gmail.com
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <h2>
+                Technical Skills
+            </h2>
+
+            <p>
+                Technologies and tools I use in my projects.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="skill-groups">
+
+                <!-- PROGRAMMING -->
+                <div class="skill-group">
+
+                    <h3>
+                        Programming & Web
+                    </h3>
+
+                    <div class="skills">
+
+                        <span class="skill">
+                            Python
+                        </span>
+
+                        <span class="skill">
+                            HTML5
+                        </span>
+
+                        <span class="skill">
+                            CSS3
+                        </span>
+
+                        <span class="skill">
+                            JavaScript
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FRAMEWORKS -->
+                <div class="skill-group">
+
+                    <h3>
+                        Frameworks
+                    </h3>
+
+                    <div class="skills">
+
+                        <span class="skill">
+                            Django
+                        </span>
+
+                        <span class="skill">
+                            Bootstrap
+                        </span>
+
+                        <span class="skill">
+                            Responsive Design
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATABASE -->
+                <div class="skill-group">
+
+                    <h3>
+                        Database
+                    </h3>
+
+                    <div class="skills">
+
+                        <span class="skill">
+                            SQLite
+                        </span>
+
+                        <span class="skill">
+                            MySQL
+                        </span>
+
+                        <span class="skill">
+                            SQL
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATA & TOOLS -->
+                <div class="skill-group">
+
+                    <h3>
+                        Data & Tools
+                    </h3>
+
+                    <div class="skills">
+
+                        <span class="skill">
+                            Pandas
+                        </span>
+
+                        <span class="skill">
+                            NumPy
+                        </span>
+
+                        <span class="skill">
+                            Matplotlib
+                        </span>
+
+                        <span class="skill">
+                            Git
+                        </span>
+
+                        <span class="skill">
+                            GitHub
+                        </span>
+
+                        <span class="skill">
+                            VS Code
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EDUCATION
+========================================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <h2>
+                Education
+            </h2>
+
+            <p>
+                My academic journey.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="table-wrapper">
+
+                <table class="education-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>
+                                Qualification
+                            </th>
+
+                            <th>
+                                Board / University
+                            </th>
+
+                            <th>
+                                Year
+                            </th>
+
+                            <th>
+                                Result
+                            </th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                SEE
+                            </td>
+
+                            <td>
+                                NEB
+                            </td>
+
+                            <td>
+                                2077
+                            </td>
+
+                            <td>
+                                80%
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                +2 / Higher Secondary
+                            </td>
+
+                            <td>
+                                NEB
+                            </td>
+
+                            <td>
+                                2080
+                            </td>
+
+                            <td>
+                                85%
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Bachelor of Information Management
+                            </td>
+
+                            <td>
+                                Tribhuvan University
+                            </td>
+
+                            <td>
+                                Running
+                            </td>
+
+                            <td>
+                                —
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <h2>
+                My Projects
+            </h2>
+
+            <p>
+                Some of my academic and personal software projects.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <!-- HOSPITAL MANAGEMENT -->
+            <article class="card project-card reveal">
+
+                <div class="project-icon">
+                    🏥
+                </div>
+
+
+                <h3>
+                    Hospital Management System
+                </h3>
+
+
+                <p>
+                    A Django-based hospital management system
+                    for patient registration, doctor scheduling,
+                    reports, billing and administrative management.
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        Django
+                    </span>
+
+                    <span class="tag">
+                        SQLite
+                    </span>
+
+                    <span class="tag">
+                        Bootstrap
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a href="#contact">
+                        Discuss Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- FOOD ORDERING -->
+            <article class="card project-card reveal">
+
+                <div class="project-icon">
+                    🍔
+                </div>
+
+
+                <h3>
+                    Online Food Ordering System
+                </h3>
+
+
+                <p>
+                    A complete online food ordering application
+                    with menu browsing, cart, checkout, order
+                    management, delivery workflow and restaurant dashboard.
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Django
+                    </span>
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        SQLite
+                    </span>
+
+                    <span class="tag">
+                        Bootstrap
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a href="#contact">
+                        Discuss Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SHARE MARKET -->
+            <article class="card project-card reveal">
+
+                <div class="project-icon">
+                    📈
+                </div>
+
+
+                <h3>
+                    Share Market Analysis
+                </h3>
+
+
+                <p>
+                    A project concept focused on stock-market
+                    analysis, portfolio tracking and financial
+                    data visualization.
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        Pandas
+                    </span>
+
+                    <span class="tag">
+                        Matplotlib
+                    </span>
+
+                    <span class="tag">
+                        Django
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a href="#contact">
+                        Discuss Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MEDIA & GALLERY
+========================================================== -->
+
+<section id="media">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <h2>
+                Media & Gallery
+            </h2>
+
+            <p>
+                A collection of my projects, activities,
+                learning journey and achievements.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <!-- PROJECT IMAGE -->
+            <div class="gallery-item reveal">
+
+                <img
+                    src="{% static 'image/project1.jpg' %}"
+                    alt="Janam Shahi project work"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <h3>
+                        Project Work
+                    </h3>
+
+                    <p>
+                        Software development and project activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEARNING -->
+            <div class="gallery-item reveal">
+
+                <img
+                    src="{% static 'image/project2.jpg' %}"
+                    alt="Janam Shahi learning activity"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <h3>
+                        Learning Journey
+                    </h3>
+
+                    <p>
+                        Academic and technical learning activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESIGN -->
+            <div class="gallery-item reveal">
+
+                <img
+                    src="{% static 'image/share.jpg' %}"
+                    alt="Janam Shahi design work"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <h3>
+                        Design Work
+                    </h3>
+
+                    <p>
+                        Professional and creative activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PERSONAL -->
+            <div class="gallery-item reveal">
+
+                <img
+                    src="{% static 'image/personal.png' %}"
+                    alt="Janam Shahi personal image"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <h3>
+                        Personal images
+                    </h3>
+                </div>
+            </div>
+
+
+            <!-- TRAINING -->
+            <div class="gallery-item reveal">
+
+                <img
+                    src="{% static 'image/program.jpg' %}"
+                    alt="Training activity"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <h3>
+                        Training
+                    </h3>
+
+                    <p>
+                        scaleup training.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- PROPOSAL PRESENTATION -->
+            <div class="gallery-item reveal">
+                <img
+                    src="{% static 'image/collage.jpg' %}"
+                    alt="Proposal presentation"
+                    loading="lazy">
+
+                <div class="gallery-overlay">
+
+                    <h3>
+                        Proposal Presentation
+                    </h3>
+
+                    <p>
+                        Academic and project presentation activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+            <div class="gallery-item reveal">
+
+                <img
+                    src="{% static 'image/profile.jpg' %}"
+                    alt="Janam Shahi profile"
+                    loading="lazy">
+
+                <div class="gallery-overlay">
+
+                    <h3>
+                        Profile
+                    </h3>
+
+                    <p>
+                        Professional and academic profile.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- TRAVEL -->
+            <div class="gallery-item reveal">
+
+                <img
+                    src="{% static 'image/tour.jpg' %}"
+                    alt="Travel"
+                    loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>
+                        Travel
+                    </h3>
+
+                    <p>
+                        Travel and personal experiences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- AWS TRAINING -->
+            <div class="gallery-item reveal">
+
+                <img
+                    src="{% static 'image/images.jpg' %}"
+                    alt="AWS training"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <h3>
+                        AWS Training
+                    </h3>
+
+                    <p>
+                        two day AWS training workshop.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCAL VIDEO -->
+            <div class="gallery-item reveal">
+                <video
+                    controls
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata" >
+                    <source
+                        src="{% static 'video/videomy.mp4' %}"
+                        type="video/mp4" >
+                    Your browser does not support the video tag.
+                </video>
+                <div class="gallery-overlay">
+                    <h3>
+                        Demo Video
+                    </h3>
+                    <p>
+                        Project demonstration and development work.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- YOUTUBE VIDEO -->
+            <div class="gallery-item reveal">
+                <div class="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/TwL7nqOgy4g"
+                        title="Django Project Class for Beginners"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <div class="gallery-overlay">
+
+                    <h3>
+                        YouTube Video
+                    </h3>
+
+                    <p>
+                        Django project class for beginners.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GITHUB
+========================================================== -->
+
+<section id="github">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <h2>
+                GitHub
+            </h2>
+
+            <p>
+                Explore my coding projects and repositories.
+            </p>
+
+        </div>
+
+
+        <div class="card github-card reveal">
+
+            <div class="github-icon">
+                <i class="fab fa-github"></i>
+            </div>
+            <div>
+                <p class="github-username">
+                    @janamshahi
+                </p>
+
+                <p class="github-description">
+                    I use GitHub to share my software projects,
+                    programming practice, academic work and
+                    development experiments.
+                </p>
+
+                <div class="github-stats">
+
+                    <div class="github-stat">
+
+                        <strong>
+                            Python
+                        </strong>
+
+                        <span>
+                            Programming
+                        </span>
+
+                    </div>
+
+
+                    <div class="github-stat">
+
+                        <strong>
+                            Django
+                        </strong>
+
+                        <span>
+                            framework
+                        </span>
+
+                    </div>
+
+
+                    <div class="github-stat">
+
+                        <strong>
+                            Web
+                        </strong>
+
+                        <span>
+                            Development
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-buttons github-actions">
+
+                    <a
+                        href="https://github.com/janamshahi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary">
+                        🐙 Visit My GitHub
+                    </a>
+
+
+                    <a
+                        href="https://github.com/janamshahi?tab=repositories"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-secondary">
+                        📂 View Repositories
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ACHIEVEMENTS
+========================================================== -->
+
+<section id="achievements">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <h2>
+                Achievements & Training
+            </h2>
+
+            <p>
+                Highlights from my academic and learning journey.
+            </p>
+
+        </div>
+
+
+        <div class="achievements-grid">
+
+            <!-- FOOD ORDERING -->
+            <div class="card achievement-card reveal">
+
+                <div class="achievement-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Online Food Ordering System
+                </h3>
+
+                <p>
+                    A complete online food ordering application
+                    with menu browsing, cart, checkout, order
+                    management, delivery status and restaurant dashboard.
+                </p>
+
+            </div>
+
+
+            <!-- AWS -->
+            <div class="card achievement-card reveal">
+
+                <div class="achievement-icon">
+                    ☁️
+                </div>
+
+                <h3>
+                    AWS Workshop
+                </h3>
+
+                <p>
+                    Completed AWS workshop training with practical
+                    exposure to cloud computing concepts.
+                </p>
+
+            </div>
+
+
+            <!-- NETWORKING -->
+            <div class="card achievement-card reveal">
+
+                <div class="achievement-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Hardware & Networking Training
+                </h3>
+
+                <p>
+                    Completed hardware and networking workshop
+                    training focused on networking concepts
+                    and practical learning.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+     IMPORTANT:
+     Only ONE contact section is used.
+========================================================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <h2>
+                Get In Touch
+            </h2>
+
+            <p>
+                Feel free to contact me for projects,
+                collaboration, learning and opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <!-- CONTACT INFORMATION -->
+            <div class="card reveal">
+
+                <h3>
+                    Contact Information
+                </h3>
+
+
+                <div class="contact-links">
+
+                    <!-- EMAIL -->
+                    <a
+                        class="contact-link"
+                        href="mailto:shahijanam633@gmail.com"  >
+
+                        <strong>
+                            ✉️ Email
+                        </strong>
+
+                        <span>
+                            shahijanam633@gmail.com
+                        </span>
+
+                    </a>
+
+
+                    <!-- PHONE -->
+                    <a
+                        class="contact-link"
+                        href="tel:+9779825600607">
+
+                        <strong>
+                            📞 Phone
+                        </strong>
+
+                        <span>
+                            +977 9825600607
+                        </span>
+
+                    </a>
+
+
+                    <!-- GITHUB -->
+                    <a
+                        class="contact-link"
+                        href="https://github.com/janamshahi"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <strong>
+                            🐙 GitHub
+                        </strong>
+
+                        <span>
+                            github.com/janamshahi
+                        </span>
+
+                    </a>
+
+
+                    <!-- FACEBOOK -->
+                    <a
+                        class="contact-link"
+                        href="https://www.facebook.com/janam.shahi.2025"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <strong>
+                            📘 Facebook
+                        </strong>
+
+                        <span>
+                            Janam Shahi
+                        </span>
+
+                    </a>
+
+
+                    <!-- YOUTUBE -->
+                    <a
+                        class="contact-link"
+                        href="https://youtube.com/@janamshahi2003"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <strong>
+                            ▶️ YouTube
+                        </strong>
+
+                        <span>
+                            Janam Shahi
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+            <form
+                class="card reveal"
+                id="contactForm" >
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your Name"
+                        autocomplete="name"
+                        required >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        autocomplete="email"
+                        required >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="Write your message..."
+                        required ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="width: 100%;">
+                    <i class="fab fa-whatsapp"></i>
+                    Send Message via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FLOATING WHATSAPP BUTTON
+========================================================== -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/9779825600607"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact Janam Shahi on WhatsApp"
+    title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- BRAND -->
+            <div class="footer-col">
+
+                <a
+                    href="#home"
+                    class="footer-logo">
+                    JS.
+                </a>
+
+
+                <p class="footer-bio">
+                    Web development, software development,
+                    QA engineering and continuous learning.
+                    Building practical digital solutions
+                    through technology.
+                </p>
+
+
+                <p class="footer-location">
+                    📍 Dhangadhi, Kailali, Nepal
+                </p>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+
+                <h4>
+                    Quick Links
+                </h4>
+
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#about">
+                            About Me
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#skills">
+                            Skills & Stack
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#education">
+                            Education
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#media">
+                            Media & Gallery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- SOCIALS -->
+            <div class="footer-col">
+
+                <h4>
+                    Connect With Me
+                </h4>
+
+
+                <div class="socials">
+
+                    <!-- GITHUB -->
+                    <a
+                        href="https://github.com/janamshahi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="GitHub"
+                        aria-label="GitHub" >
+                        <i class="fab fa-github"></i>
+                    </a>
+
+
+                    <!-- FACEBOOK -->
+                    <a
+                        href="https://www.facebook.com/janam.shahi.2025"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Facebook"
+                        aria-label="Facebook" >
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+
+                    <!-- YOUTUBE -->
+                    <a
+                        href="https://youtube.com/@janamshahi2003"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="YouTube"
+                        aria-label="YouTube" >
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+
+                    <!-- INSTAGRAM -->
+                    <a
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Instagram"
+                        aria-label="Instagram"  >
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- COPYRIGHT -->
+        <div class="footer-bottom">
+
+            <p>
+                &copy;
+                <span id="year"></span>
+                Janam Shahi.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script>
+
+    /* =========================================================
+       HERO BACKGROUND SLIDESHOW
+    ========================================================== */
+
+    const heroBgImages = [
+        "{% static 'bg_image/bg1.jpg' %}",
+        "{% static 'bg_image/bg2.jpg' %}",
+        "{% static 'bg_image/bg3.jpg' %}",
+        "{% static 'bg_image/bg4.jpg' %}",
+        "{% static 'bg_image/bg5.jpg' %}"
+    ];
+    const heroSection =
+        document.getElementById("home");
+    let currentBgIndex = 0;
+
+    function setHeroBackground(index) {
+        if (!heroSection) {
+            return;
+        }
+        heroSection.style.backgroundImage =
+            `
+            linear-gradient(
+                rgba(7, 17, 31, 0.78),
+                rgba(7, 17, 31, 0.88)
+            ),
+            url("${heroBgImages[index]}")
+            `;
+    }
+    if (
+        heroSection &&
+        heroBgImages.length > 0
+    ) {
+        setHeroBackground(0);
+        setInterval(function () {
+            currentBgIndex =
+                (currentBgIndex + 1)
+                % heroBgImages.length;
+
+            setHeroBackground(
+                currentBgIndex
+            );
+        }, 5000);
+
+    }
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================== */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    if (menuBtn && navLinks) {
+
+        menuBtn.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    navLinks.classList.toggle("open");
+
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
+
+
+                const icon =
+                    menuBtn.querySelector("i");
+
+
+                if (icon) {
+
+                    icon.className =
+                        isOpen
+                            ? "fas fa-times"
+                            : "fas fa-bars";
+
+                }
+
+            }
+        );
+
+
+        navLinks
+            .querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove(
+                            "open"
+                        );
+
+
+                        menuBtn.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+
+                        const icon =
+                            menuBtn.querySelector("i");
+
+
+                        if (icon) {
+
+                            icon.className =
+                                "fas fa-bars";
+
+                        }
+
+                    }
+                );
+
+            });
+
+    }
+
+
+    /* =========================================================
+       DARK / LIGHT MODE
+    ========================================================== */
+
+    const themeToggle =
+        document.getElementById(
+            "themeToggle"
+        );
+
+
+    const savedTheme =
+        localStorage.getItem(
+            "portfolio-theme"
+        );
+
+
+    if (savedTheme === "light") {
+
+        document.body.dataset.theme =
+            "light";
+
+        if (themeToggle) {
+
+            themeToggle.textContent =
+                "🌙 Dark";
+
+        }
+
+    }
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener(
+            "click",
+            function () {
+
+                const isLight =
+                    document.body.dataset.theme
+                    === "light";
+
+
+                if (isLight) {
+
+                    delete document.body.dataset.theme;
+
+
+                    localStorage.setItem(
+                        "portfolio-theme",
+                        "dark"
+                    );
+
+
+                    themeToggle.textContent =
+                        "☀️ Light";
+
+                } else {
+
+                    document.body.dataset.theme =
+                        "light";
+
+
+                    localStorage.setItem(
+                        "portfolio-theme",
+                        "light"
+                    );
+
+
+                    themeToggle.textContent =
+                        "🌙 Dark";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       TYPING EFFECT
+    ========================================================== */
+
+    const phrases = [
+        "Python & Django Solutions.",
+        "Web Applications.",
+        "Responsive Websites.",
+        "Database Systems.",
+        "Practical Software Projects.",
+        "QA & Software Testing."
+    ];
+
+
+    const typedText =
+        document.getElementById(
+            "typedText"
+        );
+
+
+    let phraseIndex = 0;
+    let characterIndex = 0;
+    let deleting = false;
+
+
+    function typeEffect() {
+
+        if (!typedText) {
+            return;
+        }
+
+
+        const currentPhrase =
+            phrases[phraseIndex];
+
+
+        if (!deleting) {
+
+            typedText.textContent =
+                currentPhrase.substring(
+                    0,
+                    characterIndex
+                );
+
+
+            characterIndex++;
+
+
+            if (
+                characterIndex >
+                currentPhrase.length
+            ) {
+
+                deleting = true;
+
+
+                setTimeout(
+                    typeEffect,
+                    1400
+                );
+
+
+                return;
+            }
+
+
+        } else {
+
+            typedText.textContent =
+                currentPhrase.substring(
+                    0,
+                    characterIndex
+                );
+
+
+            characterIndex--;
+
+
+            if (characterIndex < 0) {
+
+                characterIndex = 0;
+
+                deleting = false;
+
+                phraseIndex =
+                    (
+                        phraseIndex + 1
+                    )
+                    % phrases.length;
+
+            }
+
+        }
+
+
+        setTimeout(
+            typeEffect,
+            deleting
+                ? 45
+                : 80
+        );
+
+    }
+
+
+    if (typedText) {
+        typeEffect();
+    }
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+
+    if (
+        "IntersectionObserver"
+        in window
+    ) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "show"
+                                );
+
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            function (element) {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+    } else {
+
+        revealElements.forEach(
+            function (element) {
+
+                element.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       CONTACT FORM → WHATSAPP
+       
+       Only ONE submit handler.
+       This fixes the conflict in the old file.
+    ========================================================== */
+
+    const contactForm =
+        document.getElementById(
+            "contactForm"
+        );
+
+    if (contactForm) {
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+                const name =
+                    document
+                        .getElementById("name")
+                        .value
+                        .trim();
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+                const message =
+                    document
+                        .getElementById("message")
+                        .value
+                        .trim();
+                if (
+                    !name ||
+                    !email ||
+                    !message
+                ) {
+
+                    alert(
+                        "Please fill in all fields."
+                    );
+
+                    return;
+                }
+                const phoneNumber =
+                    "9779825600607";
+                const whatsappMessage =
+                    `Hello Janam! New message from your portfolio website.
+Name: ${name}
+
+Email: ${email}Message:${message}`;const whatsappURL ="https://wa.me/"+ phoneNumber+ "?text="+ encodeURIComponent(whatsappMessage);
+
+                window.open(  whatsappURL, "_blank");
+                contactForm.reset();
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================== */
+
+    const yearElement =
+        document.getElementById(
+            "year"
+        );
+
+
+    if (yearElement) {
+
+        yearElement.textContent =
+            new Date().getFullYear();
+
+    }
+
+</script>
+
+</body>
+</html>
