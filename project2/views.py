@@ -7,12 +7,11 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
 
+
 def profile(request):
     return render(request, 'profile.html')
 
-
 # LOGOUT
-
 def user_logout(request):
 
     logout(request)
@@ -36,12 +35,10 @@ def home(request):
     )
 
 
-# =========================================================
 # FORGOT PASSWORD
 
 
 def Forgotpassword(request):
-
     return render(
         request,
         'forgotpassword.html'
@@ -55,9 +52,7 @@ def user_login(request):
     if request.method == "POST":
 
         username = request.POST.get(
-            'username',
-            ''
-        ).strip()
+            'username','').strip()
 
         password = request.POST.get(
             'password',
@@ -197,11 +192,11 @@ def register(request):
         # PASSWORD LENGTH
         # =================================================
 
-        if len(password) < 8:
+        if len(password) < 5:
 
             messages.error(
                 request,
-                "Password must be at least 8 characters long."
+                "Password must be at least 5 characters long."
             )
 
             return redirect('register')
